@@ -51,8 +51,7 @@ Technical details
 
 To make this exploit, we chained the following *SIX* vulnerabilities.
 
-1. Remote code execution in Safari via incorrect side-effect modeling of 'in'
-operator in JavaScriptCore DFG compiler
+### 1. Remote code execution in Safari via incorrect side-effect modeling of 'in' operator in JavaScriptCore DFG compiler
 
 - Root cause analysis
 
@@ -223,7 +222,7 @@ pointer of the alert function to our dummy function code pointer and call it
 (with some arguments) to execute the shellcode.
 
 
-2. Arbitrary .app launching in Safari via symbolic link in didFailProvisionalLoad()
+### 2. Arbitrary .app launching in Safari via symbolic link in didFailProvisionalLoad()
 
 For file:// URL, Safari opens Finder window with [NSWorkspace selectFile:inFileViewerRootedAtPath:].
 This function accepts two parameters, and in most cases, Safari only uses the
@@ -242,7 +241,7 @@ of the Seatbelt sandbox. So we use another vulnerability that gives root, but
 sandboxed code execution.
 
 
-3. Arbitrary code execution in CVM (Core Virtual Machine) Service via heap overflow
+### 3. Arbitrary code execution in CVM (Core Virtual Machine) Service via heap overflow
 
 There is a sandboxed XPC service named com.apple.cvmsServ (i.e. CVMServer),
 which compiles shader for various architectures. It is part of built-in
@@ -340,7 +339,7 @@ After creating %lu.app and symbolic link my.app, we returned to Safari and sent
 the IPC message to open the app. But there were two more protections: quarantine
 check and opening-the-app-for-the-first-time check.
 
-4. macOS first-time app protection bypass
+### 4. macOS first-time app protection bypass
 
 If Safari tries to execute an app for the first time, Safari denies its
 execution if the file has an attribute called com.apple.quarantine or waits a
@@ -358,8 +357,7 @@ Thus, we ran this code continuously in CVMServer after creating my.app:
         kill(i, SIGCONT);
 ```
 
-5. Root privilege escalation in cfprefsd via arbitrary file / folder permission
-modification caused by a race condition
+### 5. Root privilege escalation in cfprefsd via arbitrary file / folder permission modification caused by a race condition
 
 cfprefsd is another XPC service that allows a user to create plist file. It
 is located at CoreFoundation and is recheable from most unsandboxed process.
@@ -405,8 +403,7 @@ session    optional       pam_permit.so
 Then `login root` command will give the user root shell without any
 authentication.
 
-6. Kernel privilege escalation using module staging bypass and race condition
-in kextload
+### 6. Kernel privilege escalation using module staging bypass and race condition in kextload
 
 kextload is one of programs that can perform kext (Kernel Extension) operations
 in macOS. By running `kextload [path of .kext folder]`, a root user can load a
