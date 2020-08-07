@@ -474,11 +474,18 @@ Citation
 --------
 ```txt
 @inproceedings{jin:pwn2own2020-safari,
-  title        = {{Compromising the macOS kernel through Safari by chaining six vulnerabilities (to appear)}},
-  author       = {Yonghwi Jin and Jungwon Lim and Insu Yun},
+  title        = {{Compromising the macOS kernel through Safari by chaining six vulnerabilities}},
+  author       = {Yonghwi Jin and Jungwon Lim and Insu Yun and Taesoo Kim},
   booktitle    = {Black Hat USA Briefings (Black Hat USA)},
   month        = aug,
   year         = 2020,
   address      = {Las Vegas, NV},
 }
 ```
+
+Reference
+---------
+- https://github.com/saelo/pwn2own2018
+- https://github.com/LinusHenze/WebKit-RegEx-Exploit
+- https://github.com/niklasb/sploits/blob/master/safari/regexp-uxss.html
+- https://i.blackhat.com/eu-19/Thursday/eu-19-Wang-Thinking-Outside-The-JIT-Compiler-Understanding-And-Bypassing-StructureID-Randomization-With-Generic-And-Old-School-Methods.pdf
