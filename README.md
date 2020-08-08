@@ -4,8 +4,8 @@ Compromising the macOS Kernel through Safari by Chaining Six Vulnerabilities
 Overview
 ---------
 This repository contains exploitation and technical details of [our Pwn2Own
-2020 winning submission targeting Apple Safari with a macOS kernel escalation
-of privilege](https://www.thezdi.com/blog/2020/3/17/welcome-to-pwn2own-2020-the-schedule-and-live-results).
+2020 winning submission targeting Apple Safari with a kernel escalation
+of privilege for macOS 10.15.3](https://www.thezdi.com/blog/2020/3/17/welcome-to-pwn2own-2020-the-schedule-and-live-results).
 For further information, you can also check [our Blackhat USA 2020
 slides](https://gts3.org/assets/papers/2020/jin:pwn2own2020-safari-slides.pdf).
 This repository also includes [our demo video](./movie.mov) for the succesful
