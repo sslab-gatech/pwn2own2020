@@ -59,12 +59,12 @@ killall -CONT kextload
 
 for i in {1..100}; do
 	sleep 0.2
-	if [ $i == 15 ]; then
+	if [ $i -eq 15 ]; then
 		mv C.kext D.kext
 		ln -sfh /System/Library/Extensions/AppleHV.kext C.kext
 		# rm D.kext/Contents/MacOS/AppleHV
 	fi
-	if [ $i == 34 ]; then
+	if [ $i -eq 34 ]; then
 		rm -rf C.kext
 		mv D.kext C.kext
 		# cp -rf B.kext/A.kext/Contents/MacOS C.kext/Contents
